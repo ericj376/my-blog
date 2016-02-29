@@ -68,7 +68,11 @@
 </nav>
 	<div class="jumbotron image-jumbo">
 
-  <%= user.local.email %>
+  <% if(user.local) { %>
+    <%= user.local.email %>
+    <% } else { %>
+    <%= user %>
+    <% } %>
 
 		<div class="container">
 		<div class='col-md-4'>
