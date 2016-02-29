@@ -1,0 +1,25 @@
+.image-jumbo{
+	position: relative;
+	background-image: url(http://g01.a.alicdn.com/kf/HTB122KTLXXXXXaWXVXXq6xXFXXXN/Japanese-font-b-samurai-b-font-artwork-Landscape-scenery-poster-Waterproof-Canvas-Fabric-Printing-Wall-Art.jpg);
+	width: 100%;
+    height: 150%;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.cst-nav{
+	width: 100%;
+}
+
+.cst-nav li{
+	color: blue;
+}
+
+
+.my-a {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+.skills {
+	background-color: lightyellow;
+}

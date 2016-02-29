@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Title Page</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img alt="navbar-brand" src="/images/EE_Brand.jpg"</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/pics">Pics</a></li>
+        <li><a href="/blogs">Blog</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	<div class="jumbotron">
+			<div class="container">
+				<h1>My Blogs Yo!</h1>
+				<p>Check out my Blogs!</p>
+				<p>
+					<a href="/" class="btn btn-primary btn-lg">Let's go back home!</a>
+				</p>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Author</th>
+							<th>Image</th>
+							<th>Date</th>
+							<th>Content</th>
+						</tr>
+					</thead>
+					<tbody id="blogTable">
+						<% for(var i = 0; i < blogs.length; i++) { %>
+							<tr id = "<%= blogs[i]._id%>">
+								<td><%= blogs[i].author %></td>
+								<td><%= blogs[i].image %></td>
+								<td><%= blogs[i].date %></td>
+								<td><%= blogs[i].content %></td>
+
+								<td><button type="button" class="btn btn-danger deleteBlog">Delete</button></td>
+							</tr>
+							<% }; %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
+
+		<link rel="stylesheet" href="blog.css">
+		<img src="" alt="">
+	</head>
+	<body>
+		<div class="container">
+		<section>
+		<form role="form">
+			
+			<legend>Let's get some Blogs!</legend>
+		
+			<div class="form-group">
+				<label for="">Add a Blog!</label>
+				
+				<div>
+				<input required name = "author" type="text" class="form-control" id="author" placeholder="Author">
+				</div>
+
+				<div>
+				<input required name = "image" type="text" class="form-control" id="image" placeholder="Image">
+				</div>
+
+				<div>
+				<input required name = "date" type="text" class="form-control" id="date" placeholder="Date">
+				</div>
+				<div>
+				<input required name = "content" type="text" class="form-control" id="content" placeholder="Content">
+				</div>
+		
+			
+		
+			<button type="submit" id = "addBlog" class="btn btn-primary">Submit</button>
+		</form>
+		</section>
+		</div>
+
+		<!-- jQuery -->
+		<script src="//code.jquery.com/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+ 		<script src="app.js"></script>
+	</body>
+</html>
