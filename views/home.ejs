@@ -50,7 +50,8 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="/login">LogIn</a></li>
+        <li><a href="/logout">LogOut</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -66,9 +67,12 @@
   </div><!-- /.container-fluid -->
 </nav>
 	<div class="jumbotron image-jumbo">
+
+  <%= user.local.email %>
+
 		<div class="container">
 		<div class='col-md-4'>
-		<h3>Contact info</h3>
+    <h3>Contact info</h3>
 			<ul>
 			    <li>Eric Ellingson</li>
 			    <li>Email: ericellingson376@gmail.com</li>

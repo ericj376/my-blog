@@ -45,7 +45,8 @@ app.use(function(req, res, next){
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res){
-	res.render('home', {title: 'What up world!'} )
+	var user = req.user || "no user"
+	res.render('home', { user: user } )
 });
 app.get('/about', function(req, res){
 	res.render('about', {title: 'What up world!'} )
