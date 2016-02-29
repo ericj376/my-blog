@@ -6,9 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Title Page</title>
 
-		<!-- Bootstrap CSS -->
+		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<nav class="navbar navbar-default">
+		<nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -65,54 +65,36 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-	<div class="jumbotron image-jumbo">
+	<div class="jumbotron">
 		<div class="container">
-		<div class='col-md-4'>
-		<h3>Contact info</h3>
-			<ul>
-			    <li>Eric Ellingson</li>
-			    <li>Email: ericellingson376@gmail.com</li>
-			    <li>Phone: 406-241-8804</li>
-			    <li>Location: Missoula, MT</li>
-			</ul>
-		</div>
-		<div class='col-md-4'>
-		<img src="/images/Ada.jpg" alt="">
-		</div>
-		<div class='col-md-4'>
-		<h3>A little about me..</h3>
-		</div>
 			
 		</div>
 	</div>
 
-	<link rel="stylesheet" href="home.css">
-		
+	<link rel="stylesheet" href="about.css">
 		
 	</head>
 	<body>
-  <div class="container skills"> 
-		<h1 class="text-center">A BRIEF INTRO ON MY SKILLS</h1>
-    <p class="text-align-center">
-    "I have a very diverse background, definately a "jack of all trades". Right out of high school
-    I was hired on by the Montana Department of Natural Resources and Conservation and spent the next four
-    summers fighting wildland forest fires. I ended my firefighting job as a Engine Boss/Squad Boss, and 
-    Incident Commander Type 4. I then moved away from Montana and enlisted in the United States Navy and 
-    was stationed in San Diego, CA as an Aviation Mechanic working on S3-B Vikings. I was deployed to the 
-    Middle East in 2003, and after a 10 month stint, I left the Navy and decided to find a job that complimented
-    one of my passions in life.... MUSIC! I started working for Guitar Center, and was promoted to Operations
-    Manager and operated stores from Tempe, AZ to Miami, FL. I managed the day to day operations of these stores
-    that pulled in anywhere from 8.1 million dollars to 23 million dollars a year in sales. After being away from
-    Montana for close to 11 years, in 2008 I decided to move back to the place I loved, Missoula Montana!
-    After finding a few retail managment gigs around Missoula, I landed at a company called Zonar Systems as a 
-    Regional Account Manager. I sold GPS telematics systems accross 3 states in the U.S. and all over Western
-    Canada. This job really tuned into my tech side, but the time spent away from my family really wore on me.
-    It was time for me to make another change and enrolled in Montana Code School to help solidify my future, and
-    offer the flexibility I am looking for in a career. Tapping into my tech side once again, I am learning new skills
-    to help keep me viable in an ever changing work environment. I am excited to see what the future holds for
-    me and my family as this new chapter unfolds!"
-    </p>
-    </div>
+  <div class="container">
+    <form action="/signup" method="POST" role="form">
+      <legend>User Registration</legend>
+    
+      <div class="form-group">
+        <label for="">email</label>
+        <input name="email" type="email" class="form-control" id="" placeholder="email">
+      </div>
+
+      <div class="form-group">
+        <label for="">password</label>
+        <input name="password" type="password" class="form-control" id="" placeholder="password">
+      </div>
+    
+      
+    
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+		<h1 class="text-center">Hello World</h1>
 
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
