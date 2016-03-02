@@ -6,9 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Title Page</title>
 
-		<!-- Bootstrap CSS -->
+		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<nav class="navbar navbar-default">
+		<nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -66,81 +66,60 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<div class="jumbotron">
+  <div class="container">
+    <form action="" method="POST" role="form">
+      <legend>Search for Keywords Here</legend>
+    
+      <div class="form-group">
+        <label for="">Look for tweets!</label>
+        <input type="text" class="form-control" id="" placeholder="Tweet Search Field">
+      </div>
+    
+      
+    
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
 	<div class="jumbotron">
-			<div class="container">
-				<h1>My Blogs Yo!</h1>
-				<p>Check out my Blogs!</p>
-				<p>
-					<a href="/" class="btn btn-primary btn-lg">Let's go back home!</a>
-				</p>
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>Author</th>
-							<th>Image</th>
-							<th>Date</th>
-							<th>Content</th>
-						</tr>
-					</thead>
-					<tbody id="blogTable">
-						<% for(var i = 0; i < blogs.length; i++) { %>
-							<tr id = "<%= blogs[i]._id%>">
-								<td><%= blogs[i].author %></td>
-								<td><%= blogs[i].image %></td>
-								<td><%= blogs[i].date %></td>
-								<td><%= blogs[i].content %></td>
+  </div>
+  <section>
+    <div class="container">
+    <div class="row">
+      <div class="panel panel-default col-sm-4">
+        <div class="panel-body">
+        </div>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLnld_MduTdjl5CmU1lUwH8kKiF-8Ncn-EwvxY8ldSt9e6gOOKTQ">
+      </div>
+      
+      <span id="twitterCard"></span>
 
-								<td><button type="button" class="btn btn-danger deleteBlog">Delete</button></td>
-							</tr>
-							<% }; %>
-					</tbody>
-				</table>
-			</div>
+    </div>
+  </section>
+		
+    
+    
+			
 		</div>
+	</div>
 
-
-
-		<link rel="stylesheet" href="blog.css">
-		<img src="" alt="">
+	<link rel="stylesheet" href="social.css">
+		
 	</head>
 	<body>
-		<div class="container">
-		<section>
-		
-		<form role="form" action="/api/blogs" method="POST">
-			
-			<legend>Let's get some Blogs!</legend>
-		
-			<div class="form-group">
-				<label for="">Add a Blog!</label>
-				
-				<div>
-				<input required name = "author" type="text" class="form-control" id="author" placeholder="Author">
-				</div>
 
-				<div>
-				<input required name = "image" type="text" class="form-control" id="image" placeholder="Image">
-				</div>
 
-				<div>
-				<input required name = "date" type="text" class="form-control" id="date" placeholder="Date">
-				</div>
-				<div>
-				<input required name = "content" type="text" class="form-control" id="content" placeholder="Content">
-				</div>
-		
-			
-		
-			<button type="submit" id = "" class="btn btn-primary">Submit</button>
-		</form>
-		</section>
-		</div>
+		<h1 class="text-center">Hello World</h1>
 
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
- 		<script src="app.js"></script>
+ 		<script src="https://fb.me/react-0.13.3.js"></script>
+    <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+
+    <script  type="text/jsx" src="twitterCard.js"></script>
 	</body>
 </html>

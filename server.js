@@ -5,15 +5,17 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/theBlog');
 
-var blogRouter = require('./routes/blogs');
+var blogRouter = require('./routes/blog');
 
-var Blog = require('./models/blogs')
+var Blog = require('./models/blog')
 
 var session = require('express-session');
 
 var passport = require('passport');
 
 var flash = require('connect-flash');
+
+var tweetRoutes = require('./routes/tweets');
 
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
@@ -41,6 +43,7 @@ app.use(function(req, res, next){
 	console.log(user);
 	next();
 });
+app.use('/api/tweets/', tweetRoutes);
 
 app.set('view engine', 'ejs');
 
@@ -69,7 +72,9 @@ app.get('/blogs', function(req, res){
 	
 });
 
-
+app.get('/social', function(req, res){
+	res.render('social', {title: 'What up world!'})
+});
 
 
 var port = process.env.PORT || 8080;
@@ -86,5 +91,6 @@ router.get('/', function(req, res){
 })
 
 app.use('/api', blogRouter);
+
 app.listen(port);
 	console.log('Magic happens on port ' + port);

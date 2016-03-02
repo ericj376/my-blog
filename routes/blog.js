@@ -1,17 +1,19 @@
 var express = require('express');
 var router = express.Router();
 
-var Blog = require('../models/blogs');
+var Blog = require('../models/blog');
 //This "Blog" is reference to the Schema
 router.route('/blogs')
-	.post(function(req, res){
-		console.log(req.body);
+		.post(function(req, res){
+		var u = req.user 
+		console.log(req.user._id || 'no user ID found')
 		var blog = new Blog();
 		blog.author = req.body.author;
 		blog.image = req.body.image;
 		blog.date = req.body.date;
 		blog.content = req.body.content;
-		
+		blog.creator = req.user._id || 'anon user._id';
+		console.log("CREATING BLOG: ", blog)
 		blog.save(function(err, blog){
 			if(err){
 			console.log(err)
@@ -24,7 +26,9 @@ router.route('/blogs')
 	})
 
 	.get(function(req, res){
-		Blog.find(function(err, blogs){
+		Blog.find()
+		.populate('creator')
+		.exec(function(err, blogs){
 			if(err){
 				console.log(err)
 			} else {

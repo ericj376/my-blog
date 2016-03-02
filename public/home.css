@@ -7,19 +7,17 @@
     overflow: hidden;
 }
 
-.cst-nav{
-	width: 100%;
-}
-
-.cst-nav li{
-	color: blue;
-}
-
-
-.my-a {
-	margin-left: 10%;
-	margin-right: 10%;
+.contact li{
+	font-size: 20px;
+	text-shadow: 2px 2px #ff0000;
 }
 .skills {
 	background-color: lightyellow;
+}
+
+body {
+	background-image: url(http://brogdonproperties.com/wp-content/uploads/2014/12/rustic-dark-wood-background-brandon-bourdages.jpg);
+
+    background-size: cover;
+
 }
