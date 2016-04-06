@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var Comment = require('../models/comment');
 var Blog = require('../models/blog');
 //This "Blog" is reference to the Schema
 router.route('/blogs')
@@ -28,6 +28,7 @@ router.route('/blogs')
 	.get(function(req, res){
 		Blog.find()
 		.populate('creator')
+		.populate('comments')
 		.exec(function(err, blogs){
 			if(err){
 				console.log(err)
@@ -54,21 +55,22 @@ router.route('/blogs/:blog_id')
 		Blog.findById(req.params.blog_id, function(err, blog){
 			if(err){
 				console.log(err)
-			} else {
-				blog.author = req.body.author ? req.body.author : blog.author;
-				blog.image = req.body.image ? req.body.image : blog.image;
-				blog.date = req.body.date ? req.body.date : blog.date;
-				blog.content = req.body.content ? req.body.content : blog.content;
+				} else {
+					blog.author = req.body.author ? req.body.author : blog.author;
+					blog.image = req.body.image ? req.body.image : blog.image;
+					blog.date = req.body.date ? req.body.date : blog.date;
+					blog.content = req.body.content ? req.body.content : blog.content;
 
 				blog.save(function(err){
 					if(err){
 						console.log(err);
-					}
+					} else {
 
 					res.json({ message: 'Blog updated!'});
+					}
 				})
-			}
 			
+			}
 		})
 	})
 
@@ -81,6 +83,30 @@ router.route('/blogs/:blog_id')
 			} else {
 				res.json({ message: 'Successfully deleted'});
 
+			}
+		})
+	})
+
+	router.route('/blogs/:blog_id/comment')
+	.post(function(req, res){
+		var comment = new Comment();
+		comment.body = req.body.body;
+		comment.user = '56e08a32726e0c1194000002'
+		comment.blog = req.params.blog_id;
+
+		comment.save(function(err, com){
+			if(err){
+				res.send(err);
+			} else {
+				Blog.findById(req.params.blog_id, function(err, blog){
+					if(err){
+						res.send(err)
+					} else {
+						blog.comments.push(com._id);
+						blog.save();
+						res.json(com);
+					}
+				})
 			}
 		})
 	})

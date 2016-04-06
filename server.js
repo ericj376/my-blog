@@ -17,6 +17,8 @@ var flash = require('connect-flash');
 
 var tweetRoutes = require('./routes/tweets');
 
+var commentRoutes = require('./routes/blog');
+
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
@@ -44,6 +46,7 @@ app.use(function(req, res, next){
 	next();
 });
 app.use('/api/tweets/', tweetRoutes);
+app.use('/api/blog/', commentRoutes);
 
 app.set('view engine', 'ejs');
 
